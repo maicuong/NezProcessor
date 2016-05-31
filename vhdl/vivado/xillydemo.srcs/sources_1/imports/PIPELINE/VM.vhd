@@ -176,7 +176,7 @@ begin
 	
 	S_IR_D <= mem_d_in;
 	
-	read <= S_IRlat;
+	read <= S_read;
 	write <= S_write;
 	addr <= S_PR_F;
 	addr_8 <= S_TR_F;

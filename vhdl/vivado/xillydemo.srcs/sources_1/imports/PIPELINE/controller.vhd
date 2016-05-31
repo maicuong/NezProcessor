@@ -112,25 +112,25 @@ begin
 	   read_stk => S_read_stk,
 	   write_stk => S_write_stk);
 			
-	--Byte1 : Byte port map (
-	    --CLK => clk,
-		--TRG => Byte_r,
-		--TEXT_IN => text_in,
-		--NEZ_IN => nez_in,
-		--FAIL => S_s_fail,
-		--MATCH => S_s_match);
+	Byte1 : Byte port map (
+	    CLK => clk,
+		TRG => Byte_r,
+		TEXT_IN => text_in,
+		NEZ_IN => nez_in,
+		FAIL => S_s_fail,
+		MATCH => S_s_match);
 		
-	--Set1 : Set port map(
-        --TRG => Set_r,
-        --TEXT_IN => text_in,
-        --NEZ_IN => nez_set_in,
-        --FAIL => S_set_fail,
-        --MATCH => S_set_match);
+	Set1 : Set port map(
+        TRG => Set_r,
+        TEXT_IN => text_in,
+        NEZ_IN => nez_set_in,
+        FAIL => S_set_fail,
+        MATCH => S_set_match);
 	
 	------------START CIRCUIT
 	S_START_rst <= not rst;
 	------------F1
-	S_F1_D <= S_START or (S_dec);
+	S_F1_D <= S_START or (S_dec and (S_s_match or S_set_match));
 	------------Dec-
 	S_Dec_D <= S_f1;
 	------------Ex
@@ -155,7 +155,7 @@ begin
 	SPlat <= S_SPlat;
 	s_inc_sp <= S_s_inc_sp;
 	get_sp <= S_get_sp;
-	S_match <= S_dec;
+	S_match <= (S_s_match or S_Set_match) and S_dec;
 	--S_match <= S_dec;
 	S_fail <= fail_sig;
 	read_stk <= S_read_stk;

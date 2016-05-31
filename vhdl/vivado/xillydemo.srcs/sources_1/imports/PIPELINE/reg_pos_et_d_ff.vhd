@@ -18,12 +18,24 @@ architecture Behavioral of reg_pos_et_d_ff is
 	
 begin
 
-	pos_et_d_ff1 : pos_et_d_ff port map(clk, S_D, S_Q, S_Q_BAR);
-	S_A <= (S_Q and (not lat) and (not rst));
-	S_B <= (D and lat and (not rst));
-	S_D <= S_A or S_B;
-	Q <= S_Q;
+	--pos_et_d_ff1 : pos_et_d_ff port map(clk, S_D, S_Q, S_Q_BAR);
+	--S_A <= (S_Q and (not lat) and (not rst));
+	--S_B <= (D and lat and (not rst));
+	--S_D <= S_A or S_B;
+	--Q <= S_Q;
 
+    process(clk)
+    begin
+        if(clk'event and clk = '1') then
+            if(rst = '1') then
+                Q <= '0';
+            elsif(lat = '1') then
+                Q <= D;
+            else
+                Q <= '0';
+            end if;
+        end if;
+     end process;
 
 end Behavioral;
 
