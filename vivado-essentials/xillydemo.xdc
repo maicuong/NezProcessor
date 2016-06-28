@@ -1,8 +1,12 @@
 # clk_100 is a misnomer for Zybo, since the clock is 125 MHz. The name
 # is taken from Zedboard's reference clock
 
-create_clock -name gclk -period 8 [get_ports "clk_100"]
+create_clock -period 8 -name gclk  [get_ports "clk_100"]
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets "clk_100"]
+#set_property PACKAGE_PIN L16 [get_ports clk_100]
+#set_property IOSTANDARD LVCMOS33 [get_ports clk_100]
+#create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports clk_100]
+
 
 # Vivado constraints unrelated clocks. So set false paths.
 set_false_path -from [get_clocks clk_fpga_1] -to [get_clocks vga_clk_ins/*]

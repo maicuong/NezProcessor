@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Fri Jun 24 19:45:24 2016
+# Process ID: 5956
+# Current directory: C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/synth_1
+# Command line: vivado.exe -log xillydemo.vds -mode batch -messageDb vivado.pb -notrace -source xillydemo.tcl
+# Log file: C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/synth_1/xillydemo.vds
+# Journal file: C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source xillydemo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado-ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.3/data/ip'.
+add_files: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 265.281 ; gain = 77.949
+Command: synth_design -top xillydemo -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+WARNING: [Synth 8-992] S_AXI_GP0_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2701]
+WARNING: [Synth 8-992] S_AXI_GP1_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2702]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:01:01 ; elapsed = 00:01:13 . Memory (MB): peak = 350.605 ; gain = 179.504
+---------------------------------------------------------------------------------

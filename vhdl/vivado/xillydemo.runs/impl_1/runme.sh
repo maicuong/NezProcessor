@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD=C:/FPGAPrj/VIVADO/NezProcesser/vhdl/vivado/xillydemo.runs/impl_1
+HD_PWD=C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/impl_1
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
+/bin/touch .init_design.begin.rst
 EAStep vivado -log xillydemo.vdi -applog -m64 -messageDb vivado.pb -mode batch -source xillydemo.tcl -notrace
 
 

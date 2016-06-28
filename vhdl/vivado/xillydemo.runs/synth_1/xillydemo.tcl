@@ -16,39 +16,68 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.cache/wt [current_project]
-set_property parent.project_path C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.xpr [current_project]
+set_property webtalk.parent_dir C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.cache/wt [current_project]
+set_property parent.project_path C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado-ip [current_project]
+set_property ip_repo_paths c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado-ip [current_project]
 set_property vhdl_version vhdl_2k [current_fileset]
-add_files -quiet C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.dcp
-set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.dcp]
-add_files -quiet C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/fifo_32x512_synth_1/fifo_32x512.dcp
-set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/fifo_32x512_synth_1/fifo_32x512.dcp]
-add_files -quiet C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/fifo_8x2048_synth_1/fifo_8x2048.dcp
-set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/fifo_8x2048_synth_1/fifo_8x2048.dcp]
-add_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/vivado_system.bd
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/vivado_system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/vivado_system_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/vivado_system_ooc.xdc]
-set_property is_locked true [get_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/vivado_system/vivado_system.bd]
+add_files -quiet C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.dcp
+set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.dcp]
+add_files -quiet C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/fifo_32x512_synth_1/fifo_32x512.dcp
+set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/fifo_32x512_synth_1/fifo_32x512.dcp]
+add_files -quiet C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/fifo_8x2048_synth_1/fifo_8x2048.dcp
+set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.runs/fifo_8x2048_synth_1/fifo_8x2048.dcp]
+add_files C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/vivado_system.bd
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_rst_processing_system7_0_100M_0/vivado_system_rst_processing_system7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/vivado_system_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/ip/vivado_system_auto_pc_0/vivado_system_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/vivado_system_ooc.xdc]
+set_property is_locked true [get_files C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/vivado_system/vivado_system.bd]
 
 read_verilog -library xil_defaultlib {
-  C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/src/smbus.v
-  C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/src/i2s_audio.v
-  C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/src/xillybus.v
-  C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/src/xillybus_core.v
-  C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/system.v
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/src/smbus.v
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/src/i2s_audio.v
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/src/xillybus.v
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/src/xillybus_core.v
+  C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/system.v
 }
-read_vhdl -library xil_defaultlib C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/src/xillydemo.vhd
+read_vhdl -library xil_defaultlib {
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/src/xillydemo.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/controller.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/r_d_counter_16.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/SET_TABLE.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/PIPELINE.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/ha.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/MEMORY.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/Oset.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/VM.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/ctl_sig.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/Dec.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/sp_reg.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/rw_counter_16.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/d_ff.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/rw_counter.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/Str.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/Byte.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/new/Nany.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/MEMORY_8.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/f.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/MEMORY_STK.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/Ex.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/new/FIRST_RECORD.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/new/Obyte.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/reg_pos_et_d_ff.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/new/Rset.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/imports/sources_1/imports/PIPELINE/reg_16.vhd
+  C:/FPGAPrj/VIVADO/NezProcessor/vhdl/vivado/xillydemo.srcs/sources_1/new/d_ff_1.vhd
+}
 set_property edif_extra_search_paths C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/cores [current_fileset]
-read_xdc C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc
-set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc]
+read_xdc C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/xillydemo.xdc
+set_property used_in_implementation false [get_files C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/xillydemo.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

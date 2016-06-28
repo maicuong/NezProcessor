@@ -1,10 +1,10 @@
 // Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-// Date        : Thu Dec 03 12:24:49 2015
+// Date        : Mon Jun 06 00:16:14 2016
 // Host        : maicuong running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.v
+//               C:/FPGAPrj/VIVADO/NezProcessor/vivado-essentials/fifo_32x512/fifo_32x512_sim_netlist.v
 // Design      : fifo_32x512
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

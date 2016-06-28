@@ -194,45 +194,28 @@ architecture sample_arch of xillydemo is
       user_w_smb_data : IN std_logic_vector(7 DOWNTO 0);
       user_w_smb_open : IN std_logic);
   end component;
-  
-  component VM 
-  port (
-  	  clk,rst : in std_logic;
-      mem_d_in : in std_logic_vector(31 downto 0);
-      mem_d_8_in : in std_logic_vector(7 downto 0);
-      mem_d_stk_in : in std_logic_vector(31 downto 0);
-      read, read_8, read_stk,  write, write_8, write_stk : out std_logic;
-      S_fail, S_match : out std_logic;
-      addr_8 : out std_logic_vector(31 downto 0);
-      addr_16 : out std_logic_vector(15 downto 0);
-      addr,mem_d_out : out std_logic_vector(31 downto 0));
-  end component;
-  
-  	component MEMORY port(
-     read, write : in std_logic;
-     addr : in std_logic_vector(31 downto 0);
-     data : inout std_logic_vector(31 downto 0));
-  end component;
-  
-  component MEMORY_8 port(
-     read, write : in std_logic;
-     addr : in std_logic_vector(31 downto 0);
-     data : inout std_logic_vector(7 downto 0));
-  end component;
+
+component TEST is
+    port(clk, rst: in std_logic;
+         text_from_processor : in std_logic_vector(7 downto 0);
+		 --match : out std_logic;
+		 parse_success : out std_logic);
+end component;
     
-  signal rst : std_logic;
-  signal mem_d_in :  std_logic_vector(31 downto 0);
-  signal mem_d_8_in :  std_logic_vector(7 downto 0);
-  signal mem_d_stk_in :  std_logic_vector(31 downto 0);
-  signal read, read_8, read_stk,  write, write_8, write_stk :  std_logic;
-  signal S_fail, S_match :  std_logic;
-  signal addr_8 :  std_logic_vector(31 downto 0);
-  signal addr_16 :  std_logic_vector(15 downto 0);
-  signal addr,mem_d_out :  std_logic_vector(31 downto 0);
-  
-  signal count : integer := 0;
-  signal start : std_logic := '0';
-  signal read_fifo_8 : std_logic := '0';
+signal parse_success, S_parse_success, parse_fail : std_logic;
+signal user_w_write_8_data_test : std_logic_vector(7 downto 0);
+signal user_w_write_8_wren_test : std_logic;
+signal user_r_read_8_rden_test : std_logic;
+signal user_r_read_8_data_test : std_logic_vector(7 downto 0);
+signal user_w_write_8_full_test : std_logic;
+signal user_r_read_8_empty_test : std_logic;
+
+component d_ff 
+  Port ( clk, trg : in std_logic;
+    next_trg : out std_logic );
+end component;
+
+signal test1, test2, test3, test4, test5 : std_logic;
 
 -- Synplicity black box declaration
   attribute syn_black_box : boolean;
@@ -579,83 +562,143 @@ begin
       user_w_smb_data => user_w_smb_data,
       user_w_smb_open => user_w_smb_open
       );
-  VM1 : VM 
-    port map(
-    clk => bus_clk,
-    rst => rst,
-    mem_d_in => mem_d_in,
-    mem_d_8_in => mem_d_8_in,
-    mem_d_stk_in => mem_d_stk_in,
-    read => read,
-    read_8 => read_8,
-    read_stk => read_stk,
-    write => write,
-    write_8 => write_8,
-    write_stk => write_stk,
-    S_fail => S_fail,
-    S_match => S_match,
-    addr_8 => addr_8,
-    addr_16 => addr_16,
-    addr => addr,
-    mem_d_out => mem_d_out);
+  --VM1 : VM 
+    --port map(
+   -- clk => bus_clk,
+    --rst => rst,
+    --mem_d_in => mem_d_in,
+    --mem_d_8_in => mem_d_8_in,
+    --mem_d_stk_in => mem_d_stk_in,
+    --read => read,
+    --read_8 => read_8,
+    --read_stk => read_stk,
+    --write => write,
+    --write_8 => write_8,
+    --write_stk => write_stk,
+    --S_fail => S_fail,
+    --S_match => S_match,
+    --addr_8 => addr_8,
+    --addr_16 => addr_16,
+    --addr => addr,
+    --mem_d_out => mem_d_out);
 
-	MEMORY1 : MEMORY port map(
-	   read => read, 
-	   write => write, 
-	   addr => addr, 
-	   data => mem_d_in);
+	--MEMORY1 : MEMORY port map(
+	   --read => read, 
+	   --write => write, 
+	   --addr => addr, 
+	   --data => mem_d_in);
 	   
-	MEMORY2 : MEMORY_8 port map(
-	   read => read, 
-	   write => write_8, 
-	   addr => addr_8, 
-	   data => mem_d_8_in);
+	--MEMORY2 : MEMORY_8 port map(
+	   --read => read, 
+	   --write => write_8, 
+	   --addr => addr_8, 
+	   --data => mem_d_8_in);
 	   
-	process(bus_clk)
-       begin
-           if(bus_clk'event and bus_clk = '1') then
-            if(user_w_write_8_data = "01000000") then
-                start <= '1';
-            end if;
-           if(start = '1') then
-               count <= count + 1;
-           end if;
-               if(count = 3) then    
-                   rst <= '1';
-               else
-                   rst <= '0';
-               end if;
-           end if;
-       end process;  
+	--process(bus_clk)
+       --begin
+           --if(bus_clk'event and bus_clk = '1') then
+            --if(user_w_write_8_data = "00110000") then
+                --start <= '1';
+            --end if;
+           --end if;
+       --end process;
+       
+	--process(bus_clk)
+          --begin
+              --if(bus_clk'event and bus_clk = '1') then
+              --if(start = '1') then
+                  --count <= count + 1;
+              --end if;
+              --end if;
+          --end process;
+          
+	--process(bus_clk)
+             --begin
+                 --if(bus_clk'event and bus_clk = '1') then
+                     --if(count = 3 or count = 5 or count = 7) then    
+                         --rst <= '1';
+                     --else
+                         --rst <= '0';
+                     --end if;
+                 --end if;
+             --end process;      
        
 --  8-bit loopback
 
-    process(bus_clk)
-    begin
-        if(bus_clk'event and bus_clk = '1') then
-            if(read = '1') then
-                read_fifo_8 <= '1';
-            else
-                read_fifo_8 <= '0';
-            end if;
-         end if;
-    end process;
+    --process(bus_clk)
+    --begin
+        --if(bus_clk'event and bus_clk = '1') then
+            --if(read = '1') then
+                --read_fifo_8 <= '1';
+            --else
+                --read_fifo_8 <= '0';
+            --end if;
+         --end if;
+    --end process;
        
-         fifo_8 : fifo_8x2048
+         fifo_8_write : fifo_8x2048
            port map(
              clk        => bus_clk,
              srst       => reset_8,
              din        => user_w_write_8_data,
              wr_en      => user_w_write_8_wren,
              --rd_en      => user_r_read_8_rden,
-             rd_en     => read_fifo_8,
-             dout       => user_r_read_8_data,
+             rd_en     => user_r_read_8_rden_test,
+             dout       => user_r_read_8_data_test,
              full       => user_w_write_8_full,
-             empty      => user_r_read_8_empty
+             empty      => user_r_read_8_empty_test
              );
+             
+        --user_r_read_8_rden_test <= '0';
+        
+        --user_r_read_8_rden_test <= '0' ;    
+        --user_w_write_8_data_test <= "01000000" ;
+        --user_w_write_8_wren_test <= '1' when (user_w_write_8_data = "01000000") else '0' ;
+        
+        user_r_read_8_rden_test <= (not user_w_write_8_full_test) and S_parse_success ;
+        --user_w_write_8_data_test <= user_r_read_8_data_test;
+        user_w_write_8_data_test <= "01000000";
+        --user_w_write_8_wren_test <= not user_r_read_8_empty_test;
+        test1 <=  not user_r_read_8_empty_test;
+        
+         fifo_8_read : fifo_8x2048
+               port map(
+                 clk        => bus_clk,
+                 srst       => reset_8,
+                 din        => user_w_write_8_data_test,
+                 wr_en      => user_w_write_8_wren_test,
+                 rd_en      => user_r_read_8_rden,
+                 --rd_en     => rst,
+                 dout       => user_r_read_8_data,
+                 full       => user_w_write_8_full_test,
+                 empty      => user_r_read_8_empty
+                 );             
        
            reset_8 <= not (user_w_write_8_open or user_r_read_8_open);
        
            user_r_read_8_eof <= '0';
+           
+    TEST_1 : TEST port map(
+        clk => bus_clk,
+        rst => reset_8,
+        text_from_processor => user_w_write_8_data,
+        parse_success => parse_success);
+   
+   CHECK : d_ff 
+          Port map ( 
+          clk => bus_clk,
+          trg => reset_8,
+          next_trg => user_w_write_8_wren_test );
+                
+   process(bus_clk)
+   begin
+    if(bus_clk'event and bus_clk = '1') then
+        if(parse_success = '1') then
+            S_parse_success <= '1';
+        else
+            S_parse_success <= '0';
+        end if;
+     end if;
+   end process;
 
 end sample_arch;

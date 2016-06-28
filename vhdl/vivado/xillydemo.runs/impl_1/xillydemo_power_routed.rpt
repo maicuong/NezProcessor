@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Thu May 26 16:45:20 2016
+| Date             : Tue Jun 28 10:59:32 2016
 | Host             : maicuong running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : xillydemo
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.250 |
-| Dynamic (W)              | 2.109 |
+| Total On-Chip Power (W)  | 2.252 |
+| Dynamic (W)              | 2.111 |
 | Device Static (W)        | 0.141 |
 | Total Off-Chip Power (W) | 0.008 |
 | Effective TJA (C/W)      | 11.5  |
@@ -50,23 +50,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.021 |       10 |       --- |             --- |
-| Slice Logic              |     0.009 |    11053 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     4457 |     17600 |           25.32 |
-|   CARRY4                 |    <0.001 |      303 |      4400 |            6.89 |
-|   Register               |    <0.001 |     4844 |     35200 |           13.76 |
+| Clocks                   |     0.022 |       10 |       --- |             --- |
+| Slice Logic              |     0.010 |    11615 |       --- |             --- |
+|   LUT as Logic           |     0.008 |     4693 |     17600 |           26.66 |
+|   CARRY4                 |    <0.001 |      327 |      4400 |            7.43 |
+|   Register               |    <0.001 |     5024 |     35200 |           14.27 |
 |   LUT as Distributed RAM |    <0.001 |      270 |      6000 |            4.50 |
 |   F7/F8 Muxes            |    <0.001 |       46 |     17600 |            0.26 |
-|   LUT as Shift Register  |    <0.001 |       70 |      6000 |            1.17 |
-|   Others                 |     0.000 |      604 |       --- |             --- |
-| Signals                  |     0.017 |     8043 |       --- |             --- |
-| Block RAM                |     0.007 |      4.5 |        60 |            7.50 |
+|   LUT as Shift Register  |    <0.001 |       71 |      6000 |            1.18 |
+|   Others                 |     0.000 |      697 |       --- |             --- |
+| Signals                  |     0.017 |     8397 |       --- |             --- |
+| Block RAM                |     0.008 |      5.5 |        60 |            9.17 |
 | MMCM                     |     0.105 |        1 |         2 |           50.00 |
 | PLL                      |     0.102 |        1 |         2 |           50.00 |
 | I/O                      |     0.323 |       98 |       100 |           98.00 |
 | PS7                      |     1.516 |        1 |       --- |             --- |
 | Static Power             |     0.141 |          |           |                 |
-| Total                    |     2.242 |          |           |                 |
+| Total                    |     2.244 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.075 |       0.066 |      0.009 |
+| Vccint    |       1.000 |     0.077 |       0.067 |      0.009 |
 | Vccaux    |       1.800 |     0.127 |       0.115 |      0.012 |
 | Vcco33    |       3.300 |     0.098 |       0.097 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -159,7 +159,8 @@ Table of Contents
 +---------------------------------------------------------------+-----------+
 | Name                                                          | Power (W) |
 +---------------------------------------------------------------+-----------+
-| xillydemo                                                     |     2.101 |
+| xillydemo                                                     |     2.102 |
+|   CHECK                                                       |    <0.001 |
 |   PS_GPIO_IOBUF[0]_inst                                       |     0.002 |
 |   PS_GPIO_IOBUF[10]_inst                                      |     0.002 |
 |   PS_GPIO_IOBUF[11]_inst                                      |     0.002 |
@@ -216,6 +217,113 @@ Table of Contents
 |   PS_GPIO_IOBUF[7]_inst                                       |     0.002 |
 |   PS_GPIO_IOBUF[8]_inst                                       |     0.002 |
 |   PS_GPIO_IOBUF[9]_inst                                       |     0.002 |
+|   TEST_1                                                      |     0.001 |
+|     FIRST_RECORD1                                             |    <0.001 |
+|     MEMORY1                                                   |    <0.001 |
+|     MEMORY_FAIL                                               |    <0.001 |
+|     MEMORY_RETURN                                             |    <0.001 |
+|     SET_TABLE1                                                |    <0.001 |
+|     VM1                                                       |    <0.001 |
+|       PR                                                      |    <0.001 |
+|         ff0                                                   |    <0.001 |
+|         ff1                                                   |    <0.001 |
+|         ff2                                                   |    <0.001 |
+|         ff3                                                   |    <0.001 |
+|         ff4                                                   |    <0.001 |
+|         ff5                                                   |    <0.001 |
+|       SP_FAIL                                                 |    <0.001 |
+|         rw_counter1                                           |    <0.001 |
+|           ff0                                                 |    <0.001 |
+|           ff1                                                 |    <0.001 |
+|           ff10                                                |    <0.001 |
+|           ff11                                                |    <0.001 |
+|           ff12                                                |    <0.001 |
+|           ff13                                                |    <0.001 |
+|           ff14                                                |    <0.001 |
+|           ff15                                                |    <0.001 |
+|           ff2                                                 |    <0.001 |
+|           ff3                                                 |    <0.001 |
+|           ff4                                                 |    <0.001 |
+|           ff5                                                 |    <0.001 |
+|           ff6                                                 |    <0.001 |
+|           ff7                                                 |    <0.001 |
+|           ff8                                                 |    <0.001 |
+|           ff9                                                 |    <0.001 |
+|         rw_d_counter_16_1                                     |    <0.001 |
+|           ff0                                                 |    <0.001 |
+|           ff1                                                 |    <0.001 |
+|           ff10                                                |    <0.001 |
+|           ff11                                                |    <0.001 |
+|           ff12                                                |    <0.001 |
+|           ff13                                                |    <0.001 |
+|           ff14                                                |    <0.001 |
+|           ff15                                                |    <0.001 |
+|           ff2                                                 |    <0.001 |
+|           ff3                                                 |    <0.001 |
+|           ff4                                                 |    <0.001 |
+|           ff5                                                 |    <0.001 |
+|           ff6                                                 |    <0.001 |
+|           ff7                                                 |    <0.001 |
+|           ff8                                                 |    <0.001 |
+|           ff9                                                 |    <0.001 |
+|         s_dcr_reg                                             |    <0.001 |
+|         s_inc_reg                                             |    <0.001 |
+|       SP_RETURN                                               |    <0.001 |
+|         rw_counter1                                           |    <0.001 |
+|           ff0                                                 |    <0.001 |
+|           ff1                                                 |    <0.001 |
+|           ff10                                                |    <0.001 |
+|           ff11                                                |    <0.001 |
+|           ff12                                                |    <0.001 |
+|           ff13                                                |    <0.001 |
+|           ff14                                                |    <0.001 |
+|           ff15                                                |    <0.001 |
+|           ff2                                                 |    <0.001 |
+|           ff3                                                 |    <0.001 |
+|           ff4                                                 |    <0.001 |
+|           ff5                                                 |    <0.001 |
+|           ff6                                                 |    <0.001 |
+|           ff7                                                 |    <0.001 |
+|           ff8                                                 |    <0.001 |
+|           ff9                                                 |    <0.001 |
+|         rw_d_counter_16_1                                     |    <0.001 |
+|           ff0                                                 |    <0.001 |
+|           ff1                                                 |    <0.001 |
+|           ff10                                                |    <0.001 |
+|           ff11                                                |    <0.001 |
+|           ff12                                                |    <0.001 |
+|           ff13                                                |    <0.001 |
+|           ff14                                                |    <0.001 |
+|           ff15                                                |    <0.001 |
+|           ff2                                                 |    <0.001 |
+|           ff3                                                 |    <0.001 |
+|           ff4                                                 |    <0.001 |
+|           ff5                                                 |    <0.001 |
+|           ff6                                                 |    <0.001 |
+|           ff7                                                 |    <0.001 |
+|           ff8                                                 |    <0.001 |
+|           ff9                                                 |    <0.001 |
+|         s_dcr_reg                                             |    <0.001 |
+|         s_inc_reg                                             |    <0.001 |
+|       controller1                                             |    <0.001 |
+|         Alt                                                   |    <0.001 |
+|         Call                                                  |    <0.001 |
+|         Dec1                                                  |    <0.001 |
+|         Ex1                                                   |    <0.001 |
+|           Byte1                                               |    <0.001 |
+|           Obyte1                                              |    <0.001 |
+|           Oset1                                               |    <0.001 |
+|           Rset1                                               |    <0.001 |
+|           Str1                                                |    <0.001 |
+|         Fail1                                                 |    <0.001 |
+|         Fail2                                                 |    <0.001 |
+|         Fail3                                                 |    <0.001 |
+|         First_step1                                           |    <0.001 |
+|         First_step_insert                                     |    <0.001 |
+|         Return1                                               |    <0.001 |
+|         Str_goto_next_text                                    |    <0.001 |
+|         Succ2                                                 |    <0.001 |
+|         Wait_text                                             |    <0.001 |
 |   audio_ins                                                   |     0.104 |
 |     playback_fifo                                             |    <0.001 |
 |       U0                                                      |    <0.001 |
@@ -291,11 +399,11 @@ Table of Contents
 |                     valid.cstr                                |     0.001 |
 |                       ramloop[0].ram.r                        |     0.001 |
 |                         prim_noinit.ram                       |     0.001 |
-|   fifo_8                                                      |     0.001 |
-|     U0                                                        |     0.001 |
-|       inst_fifo_gen                                           |     0.001 |
-|         gconvfifo.rf                                          |     0.001 |
-|           grf.rf                                              |     0.001 |
+|   fifo_8_read                                                 |     0.002 |
+|     U0                                                        |     0.002 |
+|       inst_fifo_gen                                           |     0.002 |
+|         gconvfifo.rf                                          |     0.002 |
+|           grf.rf                                              |     0.002 |
 |             gntv_or_sync_fifo.gl0.rd                          |    <0.001 |
 |               grss.rsts                                       |    <0.001 |
 |                 c1                                            |    <0.001 |
@@ -306,13 +414,28 @@ Table of Contents
 |                 c0                                            |     0.000 |
 |                 c1                                            |     0.000 |
 |               wpntr                                           |    <0.001 |
-|             gntv_or_sync_fifo.mem                             |    <0.001 |
-|               gbm.gbmg.gbmga.ngecc.bmg                        |    <0.001 |
-|                 inst_blk_mem_gen                              |    <0.001 |
-|                   gnativebmg.native_blk_mem_gen               |    <0.001 |
-|                     valid.cstr                                |    <0.001 |
-|                       ramloop[0].ram.r                        |    <0.001 |
-|                         prim_noinit.ram                       |    <0.001 |
+|             gntv_or_sync_fifo.mem                             |     0.002 |
+|               gbm.gbmg.gbmga.ngecc.bmg                        |     0.002 |
+|                 inst_blk_mem_gen                              |     0.002 |
+|                   gnativebmg.native_blk_mem_gen               |     0.002 |
+|                     valid.cstr                                |     0.002 |
+|                       ramloop[0].ram.r                        |     0.002 |
+|                         prim_noinit.ram                       |     0.002 |
+|   fifo_8_write                                                |    <0.001 |
+|     U0                                                        |    <0.001 |
+|       inst_fifo_gen                                           |    <0.001 |
+|         gconvfifo.rf                                          |    <0.001 |
+|           grf.rf                                              |    <0.001 |
+|             gntv_or_sync_fifo.gl0.rd                          |    <0.001 |
+|               grss.rsts                                       |    <0.001 |
+|                 c1                                            |     0.000 |
+|                 c2                                            |     0.000 |
+|               rpntr                                           |    <0.001 |
+|             gntv_or_sync_fifo.gl0.wr                          |    <0.001 |
+|               gwss.wsts                                       |    <0.001 |
+|                 c0                                            |    <0.001 |
+|                 c1                                            |     0.000 |
+|               wpntr                                           |    <0.001 |
 |   litearray0_reg_0_31_0_0                                     |    <0.001 |
 |   litearray0_reg_0_31_1_1                                     |    <0.001 |
 |   litearray0_reg_0_31_2_2                                     |    <0.001 |
@@ -423,11 +546,11 @@ Table of Contents
 |         xillyvga_0                                            |     0.299 |
 |           inst                                                |     0.299 |
 |             xillyvga_core_ins                                 |     0.299 |
-|               vga_fifo_wrapper_ins/vga_fifo                   |     0.002 |
-|                 U0                                            |     0.002 |
-|                   inst_fifo_gen                               |     0.002 |
-|                     gconvfifo.rf                              |     0.002 |
-|                       grf.rf                                  |     0.002 |
+|               vga_fifo_wrapper_ins/vga_fifo                   |     0.001 |
+|                 U0                                            |     0.001 |
+|                   inst_fifo_gen                               |     0.001 |
+|                     gconvfifo.rf                              |     0.001 |
+|                       grf.rf                                  |     0.001 |
 |                         gntv_or_sync_fifo.gcx.clkx            |    <0.001 |
 |                           gsync_stage[1].rd_stg_inst          |    <0.001 |
 |                           gsync_stage[1].wr_stg_inst          |    <0.001 |
@@ -453,7 +576,7 @@ Table of Contents
 |                                     prim_noinit.ram           |    <0.001 |
 |                         rstblk                                |    <0.001 |
 |         xlconcat_0                                            |     0.000 |
-|     xillybus_core_ins                                         |     0.026 |
+|     xillybus_core_ins                                         |     0.025 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram1  |    <0.001 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram2  |    <0.001 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram3  |    <0.001 |
